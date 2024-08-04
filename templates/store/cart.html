@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <style>
+        .cart-item { margin-bottom: 20px; }
+        .cart-total { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <div>
+        {% for sku, item in cart.items %}
+        <div class="cart-item">
+            <p><strong>{{ item.name }}</strong></p>
+            <p>Price: ${{ item.price }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="cart-total">
+        <p>Total Price: ${{ total_price }}</p>
+    </div>
+    <a href="#">Continue Shopping</a>
+</body>
+</html>
