@@ -6,7 +6,8 @@ def add_to_cart(request, sku):
     product = get_object_or_404(Product, sku=sku)
     cart = request.session.get('cart', {})
 
-    quantity = int(request.POST.get('quantity', 1))
+    quantity = int(request.GET.get('quantity', 1))
+    print(quantity)
     if sku in cart:
         cart[sku]['quantity'] += quantity
     else:
