@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'InventoryApp',
     'CartApp',
+    'CouponApp',
     'rest_framework'
 ]
 
